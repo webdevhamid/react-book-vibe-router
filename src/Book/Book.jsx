@@ -2,7 +2,8 @@ import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Book = ({ book }) => {
-  const { bookId, author, bookName, category, image, tags, rating } = book;
+  const { bookId, author, bookName, category, image, tags, rating, totalPages, yearOfPublishing } =
+    book;
   console.log(book);
   return (
     <div className="p-6 border rounded-2xl">
@@ -28,6 +29,8 @@ const Book = ({ book }) => {
       <h2 className="text-2xl font-medium my-5">By: {author}</h2>
       {/* divider  */}
       <div className="border border-dashed my-5"></div>
+      <p className="my-3">Total Pages: {totalPages}</p>
+      <p className="my-3">Year of publishing: {yearOfPublishing}</p>
       {/* category & rating  */}
       <div className="flex items-center justify-between">
         <p className="text-xl">{category}</p>
