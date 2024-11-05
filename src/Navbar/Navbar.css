@@ -1,0 +1,13 @@
+ul a.active {
+  background: transparent !important;
+  border: 1px solid #23be0a;
+  color: #23be0a !important;
+}
+ul a {
+  font-weight: bold;
+  transition: all 0.5s;
+}
+ul a:hover {
+  background: #23be0a !important;
+  color: white !important;
+}
