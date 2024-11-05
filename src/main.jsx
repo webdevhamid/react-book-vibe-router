@@ -8,6 +8,8 @@ import ErrorPage from "./ErrorPage/ErrorPage.jsx";
 import Home from "./Home/Home.jsx";
 import Dashboard from "./Dashboard/Dashboard.jsx";
 import BookDetails from "./BookDeatails/BookDetails.jsx";
+import ListedBooks from "./ListedBooks/ListedBooks.jsx";
+import { Toaster } from "react-hot-toast";
 
 const router = createBrowserRouter([
   {
@@ -22,11 +24,16 @@ const router = createBrowserRouter([
       {
         path: "books/:bookId",
         element: <BookDetails />,
-        loader: () => fetch("/booksData.json"),
+        loader: () => fetch("/booksData.json"), // Do not load all the books for one single book
       },
       {
         path: "dashboard",
         element: <Dashboard />,
+      },
+      {
+        path: "/listed-books",
+        element: <ListedBooks />,
+        loader: () => fetch("/booksData.json"), // Do not load all the books for one single book
       },
     ],
   },
@@ -34,6 +41,7 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
+    <Toaster position="top-center" reverseOrder={false} />
     <RouterProvider router={router}></RouterProvider>
   </StrictMode>
 );

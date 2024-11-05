@@ -5,16 +5,6 @@ const BookDetails = () => {
   const { bookId } = useParams();
   const id = parseInt(bookId);
 
-  //   useEffect(() => {
-  //     fetch("booksData.json")
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         setBooks(data);
-  //       });
-  //   }, []);
-
-  //   const showSpecificBook = books.filter((book) => book.bookId === +params.bookId);
-  //   console.log(showSpecificBook);
   const books = useLoaderData();
   const currentBook = books.find((book) => book.bookId === id);
   const {
