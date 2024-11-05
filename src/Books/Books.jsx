@@ -5,6 +5,7 @@ import { BeatLoader } from "react-spinners";
 const Books = () => {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     fetch("booksData.json")
       .then((res) => res.json())
